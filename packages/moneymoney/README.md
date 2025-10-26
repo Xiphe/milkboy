@@ -2,11 +2,26 @@
 
 Inofficial typescript client for [MoneyMoney](https://moneymoney.app/).
 
+### Installation
+
+```bash
+deno install jsr:@xph/money-money
+```
+
 ## Usage
 
 ```ts
-import { getTransactions } from "@xph/money-money";
+import { 
+  getTransactions,
+  getAccounts,
+  getCategories
+} from "@xph/money-money";
 
-const transactions = await getTransactions();
-console.log(transactions);
+const accounts = await getAccounts();
+const transactions = await getTransactions(
+  accounts[0].uuid,
+  new Date("2025-01-01")
+);
+const categories = await getCategories();
 ```
+
