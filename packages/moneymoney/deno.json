@@ -7,6 +7,7 @@
     "smoke": "deno run --allow-run=osascript smoke.ts"
   },
   "publish": {
+    "exclude": ["test/", "*.test.ts"],
     "include": ["mod.ts", "src/", "scripts/"]
   },
   "imports": {
