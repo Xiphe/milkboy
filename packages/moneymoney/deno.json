@@ -1,0 +1,17 @@
+{
+  "name": "@xph/moneymoney",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "tasks": {
+    "smoke": "deno run --allow-run=osascript smoke.ts"
+  },
+  "publish": {
+    "include": ["mod.ts", "src/", "scripts/"]
+  },
+  "imports": {
+    "@std/path": "jsr:@std/path@^1.1.2",
+    "@types/plist": "npm:@types/plist@^3.0.5",
+    "plist": "npm:plist@^3.1.0",
+    "zod": "npm:zod@^3.23.8"
+  }
+}

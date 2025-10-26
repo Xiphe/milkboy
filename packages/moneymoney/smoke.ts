@@ -1,0 +1,60 @@
+import { getTransactions } from "./src/transaction/getTransactions.ts";
+import { handleMoneyMoneyLocked } from "./src/handleMoneyMoneyLocked.ts";
+import { OsaScriptError } from "./src/_osascript.ts";
+// import { toTree } from "./src/toTree.ts";
+import { isInstalled } from "./src/isInstalled.ts";
+
+try {
+  console.log(await isInstalled());
+  // const transactions = await handleMoneyMoneyLocked(
+  //   () =>
+  //     getTransactions(
+  //       "1b656ea5-2e93-41f7-9add-36a1de2a60e8",
+  //       new Date("2025-10-01"),
+  //     ),
+  //   notifyLockedAndWaitForSpaceKey,
+  // );
+  // console.log(transactions);
+} catch (error) {
+  handleError(error);
+  Deno.exit(1);
+}
+
+function handleError(error: unknown) {
+  if (error instanceof OsaScriptError) {
+    console.error(
+      "osascript failed (code: ",
+      error.code,
+      ")\n---\n",
+      error.stderr,
+      "\n---\n",
+    );
+  } else {
+    console.error("An unexpected error occurred\n---\n", error, "\n---\n");
+  }
+}
+
+function notifyLockedAndWaitForSpaceKey() {
+  console.log(
+    "MoneyMoney Database is locked\n" +
+      "Please unlock the database and then press space to continue.",
+  );
+
+  return new Promise<void>((resolve) => {
+    Deno.stdin.setRaw(true, { cbreak: true });
+
+    const buffer = new Uint8Array(1);
+    const readLoop = async () => {
+      if ((await Deno.stdin.read(buffer)) === null) return;
+
+      if (buffer[0] === 32) {
+        Deno.stdin.setRaw(false);
+        console.log("Retrying...");
+        resolve();
+      } else {
+        readLoop();
+      }
+    };
+    readLoop();
+  });
+}
