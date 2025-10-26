@@ -1,9 +1,23 @@
 import { z } from "zod";
 import { IconSchema } from "../Icon.ts";
-import { BudgetSchema, EmptyBudgetSchema } from "./Budget.ts";
-import type { Tree } from "../toTree.ts";
+import {
+  type Budget,
+  BudgetSchema,
+  type EmptyBudget,
+  EmptyBudgetSchema,
+} from "./Budget.ts";
 
-export const CategorySchema = z.object({
+export type Category = {
+  budget: Budget | EmptyBudget;
+  name: string;
+  currency: string;
+  default: boolean;
+  group: boolean;
+  icon: string;
+  indentation: number;
+  uuid: string;
+};
+export const CategorySchema: z.ZodType<Category> = z.object({
   budget: z.union([BudgetSchema, EmptyBudgetSchema]),
   name: z.string(),
   currency: z.string(),
@@ -13,9 +27,6 @@ export const CategorySchema = z.object({
   indentation: z.number(),
   uuid: z.string(),
 });
-export type Category = z.infer<typeof CategorySchema>;
 
-export const CategoriesSchema = z.array(CategorySchema);
-export type Categories = z.infer<typeof CategoriesSchema>;
-
-export type CategoryTree = Tree<Category>;
+export type Categories = Category[];
+export const CategoriesSchema: z.ZodType<Categories> = z.array(CategorySchema);

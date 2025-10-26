@@ -1,14 +1,23 @@
 import { z } from "zod";
 
-export const PeriodSchema = z.enum(["monthly", "quarterly", "yearly", "total"]);
-export type Period = z.infer<typeof PeriodSchema>;
+export type Period = "monthly" | "quarterly" | "yearly" | "total";
+export const PeriodSchema: z.ZodType<Period> = z.enum([
+  "monthly",
+  "quarterly",
+  "yearly",
+  "total",
+]);
 
-export const BudgetSchema = z.object({
+export type Budget = {
+  amount: number;
+  available: number;
+  period: Period;
+};
+export const BudgetSchema: z.ZodType<Budget> = z.object({
   amount: z.number(),
   available: z.number(),
   period: PeriodSchema,
 });
-export type Budget = z.infer<typeof BudgetSchema>;
 
-export const EmptyBudgetSchema = z.object({});
-export type EmptyBudget = z.infer<typeof EmptyBudgetSchema>;
+export type EmptyBudget = Record<PropertyKey, never>;
+export const EmptyBudgetSchema: z.ZodType<EmptyBudget> = z.object({});

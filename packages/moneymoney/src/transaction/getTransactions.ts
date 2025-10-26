@@ -1,12 +1,15 @@
 import { fromFileUrl, join } from "@std/path";
 import { parse as parsePlist } from "plist";
 import { osascript } from "../_osascript.ts";
-import { TransactionsExportSchema } from "./Transaction.ts";
+import { type Transactions, TransactionsExportSchema } from "./Transaction.ts";
 
 const scriptsDir = fromFileUrl(new URL("../../scripts", import.meta.url));
 const scriptPath = join(scriptsDir, "exportTransactions.applescript");
 
-export async function getTransactions(account?: string, startDate?: Date) {
+export async function getTransactions(
+  account?: string,
+  startDate?: Date,
+): Promise<Transactions> {
   const transactions = parsePlist(
     await osascript(
       scriptPath,

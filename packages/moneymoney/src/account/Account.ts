@@ -1,11 +1,16 @@
 import { z } from "zod";
 import { IconSchema } from "../Icon.ts";
 
-export const AccountAttributesSchema = z.record(z.string(), z.string());
-export type AccountAttributes = z.infer<typeof AccountAttributesSchema>;
+export type AccountAttributes = Record<string, string>;
+export const AccountAttributesSchema: z.ZodType<AccountAttributes> = z.record(
+  z.string(),
+  z.string(),
+);
 
-export const AccountBalanceSchema = z.array(z.tuple([z.number(), z.string()]));
-export type AccountBalance = z.infer<typeof AccountBalanceSchema>;
+export type AccountBalance = [balance: number, currency: string][];
+export const AccountBalanceSchema: z.ZodType<AccountBalance> = z.array(
+  z.tuple([z.number(), z.string()]),
+);
 
 export enum ACCOUNT_TYPE {
   CASH = "Cash account",
@@ -18,7 +23,23 @@ export enum ACCOUNT_TYPE {
   PAYPAL = "PayPal",
 }
 
-export const AccountSchema = z.object({
+export type Account = {
+  accountNumber: string;
+  attributes: AccountAttributes;
+  balance: AccountBalance;
+  bankCode: string;
+  currency: string;
+  group: boolean;
+  icon: string;
+  indentation: number;
+  name: string;
+  owner: string;
+  portfolio: boolean;
+  refreshTimestamp: Date;
+  type: string | ACCOUNT_TYPE;
+  uuid: string;
+};
+export const AccountSchema: z.ZodType<Account> = z.object({
   accountNumber: z.string(),
   attributes: AccountAttributesSchema,
   balance: AccountBalanceSchema,
@@ -35,7 +56,5 @@ export const AccountSchema = z.object({
   uuid: z.string(),
 });
 
-export type Account = z.infer<typeof AccountSchema>;
-
-export const AccountsSchema = z.array(AccountSchema);
-export type Accounts = z.infer<typeof AccountsSchema>;
+export type Accounts = Account[];
+export const AccountsSchema: z.ZodType<Accounts> = z.array(AccountSchema);
