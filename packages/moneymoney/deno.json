@@ -2,7 +2,10 @@
   "name": "@xph/moneymoney",
   "version": "0.1.0",
   "license": "MIT",
-  "exports": "./mod.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts"
+  },
   "tasks": {
     "smoke": "deno run --allow-run=osascript smoke.ts"
   },

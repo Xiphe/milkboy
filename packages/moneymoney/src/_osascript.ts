@@ -3,6 +3,16 @@ import {
   MoneyMoneyDatabaseLockedError,
 } from "./handleMoneyMoneyLocked.ts";
 
+/**
+ * Specific for non-zero exit codes from osascript
+ *
+ * @example
+ * ```typescript
+ * import { OsaScriptError } from "@xph/moneymoney";
+ *
+ * const error = new OsaScriptError("osascript failed", 1, "stderr");
+ * ```
+ */
 export class OsaScriptError extends Error {
   code: number;
   stderr: string;
