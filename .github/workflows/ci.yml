@@ -19,7 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         deno:
-          - v1.x
           - v2.x
           - canary
         os:
@@ -45,14 +44,7 @@ jobs:
         if: matrix.deno == 'canary' && matrix.os == 'ubuntu-latest'
 
   lint:
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v5
