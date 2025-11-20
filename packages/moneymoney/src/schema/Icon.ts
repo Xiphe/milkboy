@@ -21,5 +21,6 @@ const IconSchemaInternal = z.union([
  * const icon = IconSchema.parse("data:image/png;base64,iVBORw0KGgo=");
  * ```
  */
-export const IconSchema: z.ZodType<string> =
-  IconSchemaInternal as z.ZodType<string>;
+export const IconSchema: z.ZodType<string> = IconSchemaInternal as z.ZodType<
+  string
+>;

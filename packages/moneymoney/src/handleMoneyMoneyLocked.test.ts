@@ -3,7 +3,7 @@ import {
   handleMoneyMoneyLocked,
   MoneyMoneyDatabaseLockedError,
 } from "./index.ts";
-import { it, describe } from "@std/testing/bdd";
+import { describe, it } from "@std/testing/bdd";
 
 describe("handleMoneyMoneyLocked", () => {
   it("retries when the database is locked", async () => {

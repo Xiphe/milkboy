@@ -74,8 +74,9 @@ export type Transactions = Transaction[];
  * const transactions = TransactionsSchema.parse([/* ...some transactions *\/]);
  * ```
  */
-export const TransactionsSchema: z.ZodType<Transactions> =
-  z.array(TransactionSchema);
+export const TransactionsSchema: z.ZodType<Transactions> = z.array(
+  TransactionSchema,
+);
 
 /**
  * A MoneyMoney Transactions Export
