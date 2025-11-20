@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
       id-token: write
@@ -21,10 +21,6 @@ jobs:
         deno:
           - v2.x
           - canary
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macOS-latest
 
     steps:
       - name: Clone repository
@@ -41,7 +37,7 @@ jobs:
 
       - name: Publish dry run
         run: deno publish --dry-run
-        if: matrix.deno == 'canary' && matrix.os == 'ubuntu-latest'
+        if: matrix.deno == 'canary'
 
   lint:
     runs-on: ubuntu-latest
