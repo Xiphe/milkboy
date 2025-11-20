@@ -1,6 +1,7 @@
 {
   "name": "@xph/moneymoney",
   "version": "0.2.1",
+  "description": "Typescript client for MoneyMoney",
   "license": "MIT",
   "exports": {
     ".": "./src/index.ts",
