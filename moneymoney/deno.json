@@ -1,6 +1,6 @@
 {
   "name": "@xph/moneymoney",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Typescript client for MoneyMoney",
   "license": "MIT",
   "exports": {
@@ -12,8 +12,16 @@
     "smoke": "deno run --allow-run=osascript smoke.ts"
   },
   "publish": {
-    "exclude": ["test/", "*.test.ts"],
-    "include": ["mod.ts", "src/", "scripts/", "README.md"]
+    "exclude": [
+      "test/",
+      "*.test.ts"
+    ],
+    "include": [
+      "mod.ts",
+      "src/",
+      "scripts/",
+      "README.md"
+    ]
   },
   "imports": {
     "@std/path": "jsr:@std/path@^1.1.2",
