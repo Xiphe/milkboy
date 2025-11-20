@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, it } from "@std/testing/bdd";
 import { assertRejects } from "@std/assert";
 import { mockSession, restore, stub } from "@std/testing/mock";
-import { MoneyMoneyDatabaseLockedError } from "../src/index.ts";
-import { osascript } from "../src/_osascript.ts";
+import { MoneyMoneyDatabaseLockedError } from "./index.ts";
+import { osascript } from "./_osascript.ts";
 
 describe("osascript", () => {
   let session = 0;

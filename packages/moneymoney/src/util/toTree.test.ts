@@ -1,6 +1,6 @@
 import { describe, it } from "@std/testing/bdd";
 import { assertObjectMatch } from "@std/assert";
-import { toTree, type TreeNode } from "../src/index.ts";
+import { toTree, type TreeNode } from "./index.ts";
 
 describe("toTree", () => {
   it("builds a simple flat tree with no children", () => {

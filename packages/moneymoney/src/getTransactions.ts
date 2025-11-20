@@ -18,7 +18,6 @@ const scriptPath = join(scriptsDir, "exportTransactions.applescript");
  * @throws {OsaScriptError} If MoneyMoney is not installed or apple script fails
  * @throws {ZodError} If the transactions are invalid
  * @throws {Error} when something unexpected happens
- * @see {Transactions}
  *
  * @example
  * ```typescript

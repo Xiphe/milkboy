@@ -16,15 +16,14 @@ export type Tree<T extends TreeNode> = T & {
 
 /**
  * Builds a tree structure from flat list of accounts or categories
- * @see {Accounts}
- * @see {Categories}
  *
  * @param items - List of items to build the tree from
  * @returns {Tree<T>[]} Tree structure
  *
  * @example
  * ```typescript
- * import { toTree, getAccounts } from "@xph/moneymoney";
+ * import { getAccounts } from "@xph/moneymoney";
+ * import { toTree } from "@xph/moneymoney/util";
  *
  * const accounts = await getAccounts();
  * const tree = toTree(accounts);

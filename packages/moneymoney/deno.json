@@ -4,6 +4,7 @@
   "license": "MIT",
   "exports": {
     ".": "./src/index.ts",
+    "./util": "./src/util/index.ts",
     "./schema": "./src/schema/index.ts"
   },
   "tasks": {

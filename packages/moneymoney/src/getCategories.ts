@@ -16,7 +16,6 @@ const scriptPath = join(scriptsDir, "exportCategories.applescript");
  * @throws {OsaScriptError} If MoneyMoney is not installed or apple script fails
  * @throws {ZodError} If the categories are invalid
  * @throws {Error} when something unexpected happens
- * @see {Categories}
  *
  * @example
  * ```typescript

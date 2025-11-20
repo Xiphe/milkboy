@@ -23,7 +23,7 @@ export type Category = {
 
 /**
  * zod schema for a MoneyMoney Category
- * @see {Category}
+ *
  * @example
  * ```typescript
  * import { CategorySchema } from "@xph/moneymoney";
@@ -52,17 +52,15 @@ export const CategorySchema: z.ZodType<Category> = z.object({
 
 /**
  * List of MoneyMoney Categories
- * @see {Category}
  */
 export type Categories = Category[];
 
 /**
  * zod schema for a list of MoneyMoney Categories
  *
- * @see {Categories}
  * @example
  * ```typescript
- * import { CategoriesSchema } from "@xph/moneymoney";
+ * import { CategoriesSchema } from "@xph/moneymoney/schema";
  *
  * const categories = CategoriesSchema.parse([
  *   /* ...some categories *\/

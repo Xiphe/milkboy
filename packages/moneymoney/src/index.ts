@@ -1,22 +1,20 @@
 /**
- * Primary API for MoneyMoney
+ * Load typed data from MoneyMoney
+ * @module
  *
- * @see {getAccounts}
- * @see {getCategories}
- * @see {getTransactions}
- * @see {handleMoneyMoneyLocked}
- * @see {isInstalled}
- * @see {toTree}
- * @see {filterCurrency}
+ * @example
+ * ```typescript
+ * import { getAccounts, getCategories, getTransactions } from "@xph/moneymoney";
+ *
+ * const accounts = await getAccounts();
+ * const categories = await getCategories();
+ * const transactions = await getTransactions();
+ * ```
  */
 
 export * from "./getAccounts.ts";
 export * from "./getCategories.ts";
 export * from "./getTransactions.ts";
-export * from "./handleMoneyMoneyLocked.ts";
 export * from "./isInstalled.ts";
-export * from "./toTree.ts";
-export * from "./filterCurrency.ts";
+export * from "./handleMoneyMoneyLocked.ts";
 export { OsaScriptError } from "./_osascript.ts";
-export type * from "./schema/index.ts";
-export * from "./retry.ts";

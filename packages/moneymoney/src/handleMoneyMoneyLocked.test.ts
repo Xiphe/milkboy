@@ -2,7 +2,7 @@ import { assertEquals } from "@std/assert";
 import {
   handleMoneyMoneyLocked,
   MoneyMoneyDatabaseLockedError,
-} from "../src/index.ts";
+} from "./index.ts";
 import { it, describe } from "@std/testing/bdd";
 
 describe("handleMoneyMoneyLocked", () => {

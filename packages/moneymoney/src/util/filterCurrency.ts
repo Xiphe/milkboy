@@ -5,7 +5,8 @@
  *
  * @example
  * ```typescript
- * import { filterCurrency, getAccounts } from "@xph/moneymoney";
+ * import { getAccounts } from "@xph/moneymoney";
+ * import { filterCurrency } from "@xph/moneymoney/util";
  *
  * const accounts = await getAccounts();
  * const [eurAccounts, otherAccounts] = filterCurrency(accounts, "EUR");

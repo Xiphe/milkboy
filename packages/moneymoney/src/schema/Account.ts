@@ -3,17 +3,15 @@ import { IconSchema } from "./Icon.ts";
 
 /**
  * Custom Attributes for a MoneyMoney Account
- * @see {Account}
  */
 export type AccountAttributes = Record<string, string>;
 
 /**
  * zod schema for custom attributes of a MoneyMoney Account
  *
- * @see {AccountAttributes}
  * @example
  * ```typescript
- * import { AccountAttributesSchema } from "@xph/moneymoney";
+ * import { AccountAttributesSchema } from "@xph/moneymoney/schema";
  *
  * const attributes = AccountAttributesSchema.parse({
  *   "some-data": "some-value",
@@ -27,17 +25,15 @@ export const AccountAttributesSchema: z.ZodType<AccountAttributes> = z.record(
 
 /**
  * Balance of a MoneyMoney Account
- * @see {Account}
  */
 export type AccountBalance = [balance: number, currency: string][];
 
 /**
  * zod schema for the balance of a MoneyMoney Account
- * @see {AccountBalance}
  *
  * @example
  * ```typescript
- * import { AccountBalanceSchema } from "@xph/moneymoney";
+ * import { AccountBalanceSchema } from "@xph/moneymoney/schema";
  *
  * const balance = AccountBalanceSchema.parse([[1000, "EUR"]]);
  * ```
@@ -82,10 +78,9 @@ export type Account = {
 
 /**
  * zod schema for a MoneyMoney Account
- * @see {Account}
  * @example
  * ```typescript
- * import { AccountSchema, ACCOUNT_TYPE } from "@xph/moneymoney";
+ * import { AccountSchema, ACCOUNT_TYPE } from "@xph/moneymoney/schema";
  *
  * const account = AccountSchema.parse({
  *   name: "My Account",
@@ -123,16 +118,14 @@ export const AccountSchema: z.ZodType<Account> = z.object({
 
 /**
  * List of MoneyMoney Accounts
- * @see {Account}
  */
 export type Accounts = Account[];
 
 /**
  * zod schema for a list of MoneyMoney Accounts
- * @see {Accounts}
  * @example
  * ```typescript
- * import { AccountsSchema } from "@xph/moneymoney";
+ * import { AccountsSchema } from "@xph/moneymoney/schema";
  *
  * const accounts = AccountsSchema.parse([/* ...some accounts *\/]);
  * ```

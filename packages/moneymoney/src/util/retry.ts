@@ -7,7 +7,8 @@
  *
  * @example
  * ```typescript
- * import { retry, handleMoneyMoneyLocked, getAccounts } from "@xph/moneymoney";
+ * import { handleMoneyMoneyLocked, getAccounts } from "@xph/moneymoney";
+ * import { retry } from "@xph/moneymoney/util";
  *
  * const accounts = await handleMoneyMoneyLocked(
  *  getAccounts,

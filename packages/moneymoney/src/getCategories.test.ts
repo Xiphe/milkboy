@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, it } from "@std/testing/bdd";
 import { assertEquals } from "@std/assert";
 import { mockSession, restore, stub } from "@std/testing/mock";
-import { getCategories } from "../src/index.ts";
+import { getCategories } from "./index.ts";
 
 describe("getCategories", () => {
   let session = 0;

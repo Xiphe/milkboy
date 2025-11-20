@@ -1,8 +1,6 @@
 /**
  * MoneyMoney database locked error
  * thrown when the MoneyMoney database is locked
- * @see {isMoneyMoneyDatabaseLocked}
- * @see {handleMoneyMoneyLocked}
  *
  * @example
  * ```typescript
@@ -43,7 +41,7 @@ export function isMoneyMoneyDatabaseLocked(stdError: string): boolean {
  *
  * @example
  * ```typescript
- * import { handleMoneyMoneyLocked, getAccounts } from "@xph/moneymoney";
+ * import { getAccounts, handleMoneyMoneyLocked } from "@xph/moneymoney";
  *
  * const accounts = await handleMoneyMoneyLocked(getAccounts, async () => {
  *   console.log("MoneyMoney Database is locked...");

@@ -1,6 +1,6 @@
 import { describe, it } from "@std/testing/bdd";
 import { assertEquals } from "@std/assert";
-import { filterCurrency } from "../src/index.ts";
+import { filterCurrency } from "./index.ts";
 
 interface TestItem {
   currency: string;

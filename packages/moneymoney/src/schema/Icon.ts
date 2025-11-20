@@ -11,5 +11,15 @@ const IconSchemaInternal = z.union([
   z.string(),
 ]);
 
+/**
+ * zod schema for a MoneyMoney icon
+ *
+ * @example
+ * ```typescript
+ * import { IconSchema } from "@xph/moneymoney/schema";
+ *
+ * const icon = IconSchema.parse("data:image/png;base64,iVBORw0KGgo=");
+ * ```
+ */
 export const IconSchema: z.ZodType<string> =
   IconSchemaInternal as z.ZodType<string>;

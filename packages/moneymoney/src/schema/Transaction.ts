@@ -22,10 +22,9 @@ export type Transaction = {
 /**
  * zod schema for a MoneyMoney Transaction
  *
- * @see {Transaction}
  * @example
  * ```typescript
- * import { TransactionSchema } from "@xph/moneymoney";
+ * import { TransactionSchema } from "@xph/moneymoney/schema";
  *
  * const transaction = TransactionSchema.parse({
  *   accountUuid: "1234567890",
@@ -62,18 +61,15 @@ export const TransactionSchema: z.ZodType<Transaction> = z.object({
 
 /**
  * List of MoneyMoney Transactions
- *
- * @see {Transaction}
  */
 export type Transactions = Transaction[];
 
 /**
  * zod schema for a list of MoneyMoney Transactions
  *
- * @see {Transactions}
  * @example
  * ```typescript
- * import { TransactionsSchema } from "@xph/moneymoney";
+ * import { TransactionsSchema } from "@xph/moneymoney/schema";
  *
  * const transactions = TransactionsSchema.parse([/* ...some transactions *\/]);
  * ```
@@ -83,7 +79,6 @@ export const TransactionsSchema: z.ZodType<Transactions> =
 
 /**
  * A MoneyMoney Transactions Export
- * @see {Transaction}
  */
 export type TransactionsExport = {
   creator: string;
@@ -93,10 +88,9 @@ export type TransactionsExport = {
 /**
  * zod schema for a MoneyMoney Transactions Export
  *
- * @see {TransactionsExport}
  * @example
  * ```typescript
- * import { TransactionsExportSchema } from "@xph/moneymoney";
+ * import { TransactionsExportSchema } from "@xph/moneymoney/schema";
  *
  * const transactionsExport = TransactionsExportSchema.parse({
  *   creator: "Some creator",
