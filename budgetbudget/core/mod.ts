@@ -14,6 +14,6 @@
  * Placeholder function demonstrating the domain is wired up.
  * Will be replaced with real budget document logic.
  */
-export function ping() {
+export function ping(): Date {
   return new Date();
 }

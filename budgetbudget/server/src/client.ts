@@ -3,11 +3,12 @@
  */
 
 import {
-  createTRPCProxyClient,
   type Operation,
+  type TRPCLink,
+  type TRPCClient,
   TRPCClientError,
+  createTRPCProxyClient,
 } from "@trpc/client";
-import type { TRPCLink } from "@trpc/client";
 import { observable } from "@trpc/server/observable";
 import { deserialize, stringify, type SuperJSONResult } from "superjson";
 import type { AppRouter } from "./router.ts";
@@ -25,11 +26,12 @@ export interface UserMessageHandler {
 
 export type PendingRequest = PromiseWithResolvers<IpcResult>;
 export type PendingRequests = Map<number, PendingRequest>;
+export type Client = TRPCClient<AppRouter>;
 
 export function createClient(
   pendingRequests: PendingRequests,
   messageHandler: UserMessageHandler,
-) {
+): Client {
   const transport = webviewTransport(pendingRequests, messageHandler);
   const link = createTransportLink(transport);
 
@@ -76,8 +78,6 @@ export function createIpcResponseHandler(
     }
   };
 }
-
-export type Client = ReturnType<typeof createClient>;
 
 function createTransportLink(
   transport: ReturnType<typeof webviewTransport>,

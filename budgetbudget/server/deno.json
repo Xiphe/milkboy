@@ -7,6 +7,11 @@
   "exports": {
     "./client": "./src/client.ts"
   },
+  "lint": {
+    "rules": {
+      "exclude": ["no-slow-types"]
+    }
+  },
   "imports": {
     "@trpc/server": "npm:@trpc/server@^11.8.1",
     "@trpc/client": "npm:@trpc/client@^11.8.1",
