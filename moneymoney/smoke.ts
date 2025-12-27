@@ -1,9 +1,10 @@
+// deno-lint-ignore-file no-console
 import {
   getTransactions,
   handleMoneyMoneyLocked,
   OsaScriptError,
-  retry,
-} from "./mod.ts";
+} from "./src/index.ts";
+import { retry } from "./src/util/retry.ts";
 
 try {
   const transactions = await handleMoneyMoneyLocked(

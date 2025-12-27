@@ -1,0 +1,19 @@
+{
+  "name": "@xph/budgetbudget-server",
+  "private": true,
+  "version": "0.0.1",
+  "description": "tRPC router and transport adapter for BudgetBudget",
+  "license": "MIT",
+  "exports": {
+    "./client": "./src/client.ts"
+  },
+  "imports": {
+    "@trpc/server": "npm:@trpc/server@^11.8.1",
+    "@trpc/client": "npm:@trpc/client@^11.8.1",
+    "superjson": "npm:superjson@^2.2.6",
+    "zod": "npm:zod@^4.2.1"
+  },
+  "tasks": {
+    "compile": "deno compile --allow-read --allow-write --allow-env --output build/rpc-server src/server.ts"
+  }
+}
