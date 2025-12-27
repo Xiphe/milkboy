@@ -1,63 +1,77 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@std/assert@^1.0.15": "1.0.15",
-    "jsr:@std/async@^1.0.15": "1.0.15",
+    "jsr:@std/assert@^1.0.15": "1.0.16",
+    "jsr:@std/assert@^1.0.16": "1.0.16",
     "jsr:@std/data-structures@^1.0.9": "1.0.9",
-    "jsr:@std/fs@^1.0.19": "1.0.19",
-    "jsr:@std/internal@^1.0.10": "1.0.12",
+    "jsr:@std/fs@^1.0.19": "1.0.21",
+    "jsr:@std/fs@^1.0.21": "1.0.21",
     "jsr:@std/internal@^1.0.12": "1.0.12",
-    "jsr:@std/path@^1.1.1": "1.1.2",
-    "jsr:@std/path@^1.1.2": "1.1.2",
+    "jsr:@std/path@^1.1.2": "1.1.4",
+    "jsr:@std/path@^1.1.4": "1.1.4",
     "jsr:@std/testing@^1.0.16": "1.0.16",
-    "npm:@types/node@*": "24.2.0",
+    "npm:@trpc/client@^11.8.1": "11.8.1_@trpc+server@11.8.1__typescript@5.9.3_typescript@5.9.3",
+    "npm:@trpc/server@^11.8.1": "11.8.1_typescript@5.9.3",
     "npm:@types/plist@^3.0.5": "3.0.5",
     "npm:plist@^3.1.0": "3.1.0",
+    "npm:preact@^10.28.1": "10.28.1",
+    "npm:superjson@^2.2.6": "2.2.6",
     "npm:zod@*": "3.23.8",
     "npm:zod@4.1.12": "4.1.12",
-    "npm:zod@^3.23.8": "3.23.8"
+    "npm:zod@^3.23.8": "3.23.8",
+    "npm:zod@^4.2.1": "4.2.1"
   },
   "jsr": {
-    "@std/assert@1.0.15": {
-      "integrity": "d64018e951dbdfab9777335ecdb000c0b4e3df036984083be219ce5941e4703b",
+    "@std/assert@1.0.16": {
+      "integrity": "6a7272ed1eaa77defe76e5ff63ca705d9c495077e2d5fd0126d2b53fc5bd6532",
       "dependencies": [
-        "jsr:@std/internal@^1.0.12"
+        "jsr:@std/internal"
       ]
-    },
-    "@std/async@1.0.15": {
-      "integrity": "55d1d9d04f99403fe5730ab16bdcc3c47f658a6bf054cafb38a50f046238116e"
     },
     "@std/data-structures@1.0.9": {
       "integrity": "033d6e17e64bf1f84a614e647c1b015fa2576ae3312305821e1a4cb20674bb4d"
     },
-    "@std/fs@1.0.19": {
-      "integrity": "051968c2b1eae4d2ea9f79a08a3845740ef6af10356aff43d3e2ef11ed09fb06",
+    "@std/fs@1.0.21": {
+      "integrity": "d720fe1056d78d43065a4d6e0eeb2b19f34adb8a0bc7caf3a4dbf1d4178252cd",
       "dependencies": [
-        "jsr:@std/path@^1.1.1"
+        "jsr:@std/internal",
+        "jsr:@std/path@^1.1.4"
       ]
     },
     "@std/internal@1.0.12": {
       "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
     },
-    "@std/path@1.1.2": {
-      "integrity": "c0b13b97dfe06546d5e16bf3966b1cadf92e1cc83e56ba5476ad8b498d9e3038",
+    "@std/path@1.1.4": {
+      "integrity": "1d2d43f39efb1b42f0b1882a25486647cb851481862dc7313390b2bb044314b5",
       "dependencies": [
-        "jsr:@std/internal@^1.0.10"
+        "jsr:@std/internal"
       ]
     },
     "@std/testing@1.0.16": {
       "integrity": "a917ffdeb5924c9be436dc78bc32e511760e14d3a96e49c607fc5ecca86d0092",
       "dependencies": [
-        "jsr:@std/assert",
-        "jsr:@std/async",
+        "jsr:@std/assert@^1.0.15",
         "jsr:@std/data-structures",
-        "jsr:@std/fs",
-        "jsr:@std/internal@^1.0.12",
+        "jsr:@std/fs@^1.0.19",
+        "jsr:@std/internal",
         "jsr:@std/path@^1.1.2"
       ]
     }
   },
   "npm": {
+    "@trpc/client@11.8.1_@trpc+server@11.8.1__typescript@5.9.3_typescript@5.9.3": {
+      "integrity": "sha512-L/SJFGanr9xGABmuDoeXR4xAdHJmsXsiF9OuH+apecJ+8sUITzVT1EPeqp0ebqA6lBhEl5pPfg3rngVhi/h60Q==",
+      "dependencies": [
+        "@trpc/server",
+        "typescript"
+      ]
+    },
+    "@trpc/server@11.8.1_typescript@5.9.3": {
+      "integrity": "sha512-P4rzZRpEL7zDFgjxK65IdyH0e41FMFfTkQkuq0BA5tKcr7E6v9/v38DEklCpoDN6sPiB1Sigy/PUEzHENhswDA==",
+      "dependencies": [
+        "typescript"
+      ]
+    },
     "@types/node@24.2.0": {
       "integrity": "sha512-3xyG3pMCq3oYCNg7/ZP+E1ooTaGB4cG8JWRsqqOYQdbWNY4zbaV0Ennrd7stjiJEFZCaybcIgpTjJWHRfBSIDw==",
       "dependencies": [
@@ -77,6 +91,15 @@
     "base64-js@1.5.1": {
       "integrity": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA=="
     },
+    "copy-anything@4.0.5": {
+      "integrity": "sha512-7Vv6asjS4gMOuILabD3l739tsaxFQmC+a7pLZm02zyvs8p977bL3zEgq3yDk5rn9B0PbYgIv++jmHcuUab4RhA==",
+      "dependencies": [
+        "is-what"
+      ]
+    },
+    "is-what@5.5.0": {
+      "integrity": "sha512-oG7cgbmg5kLYae2N5IVd3jm2s+vldjxJzK1pcu9LfpGuQ93MQSzo0okvRna+7y5ifrD+20FE8FvjusyGaz14fw=="
+    },
     "plist@3.1.0": {
       "integrity": "sha512-uysumyrvkUX0rX/dEVqt8gC3sTBzd4zoWfLeS29nb53imdaXVvLINYXTI2GNqzaMuvacNx4uJQ8+b3zXR0pkgQ==",
       "dependencies": [
@@ -84,6 +107,19 @@
         "base64-js",
         "xmlbuilder"
       ]
+    },
+    "preact@10.28.1": {
+      "integrity": "sha512-u1/ixq/lVQI0CakKNvLDEcW5zfCjUQfZdK9qqWuIJtsezuyG6pk9TWj75GMuI/EzRSZB/VAE43sNWWZfiy8psw=="
+    },
+    "superjson@2.2.6": {
+      "integrity": "sha512-H+ue8Zo4vJmV2nRjpx86P35lzwDT3nItnIsocgumgr0hHMQ+ZGq5vrERg9kJBo5AWGmxZDhzDo+WVIJqkB0cGA==",
+      "dependencies": [
+        "copy-anything"
+      ]
+    },
+    "typescript@5.9.3": {
+      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+      "bin": true
     },
     "undici-types@7.10.0": {
       "integrity": "sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag=="
@@ -96,14 +132,31 @@
     },
     "zod@4.1.12": {
       "integrity": "sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ=="
+    },
+    "zod@4.2.1": {
+      "integrity": "sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw=="
     }
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^1.0.15",
+      "jsr:@std/assert@^1.0.16",
+      "jsr:@std/fs@^1.0.21",
       "jsr:@std/testing@^1.0.16"
     ],
     "members": {
+      "budgetbudget/server": {
+        "dependencies": [
+          "npm:@trpc/client@^11.8.1",
+          "npm:@trpc/server@^11.8.1",
+          "npm:superjson@^2.2.6",
+          "npm:zod@^4.2.1"
+        ]
+      },
+      "budgetbudget/ui": {
+        "dependencies": [
+          "npm:preact@^10.28.1"
+        ]
+      },
       "moneymoney": {
         "dependencies": [
           "jsr:@std/path@^1.1.2",

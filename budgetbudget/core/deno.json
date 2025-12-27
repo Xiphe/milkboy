@@ -1,0 +1,9 @@
+{
+  "name": "@xph/budgetbudget",
+  "version": "0.0.1",
+  "description": "Budget document domain library",
+  "license": "MIT",
+  "exports": {
+    ".": "./mod.ts"
+  }
+}
