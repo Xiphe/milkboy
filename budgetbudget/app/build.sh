@@ -15,7 +15,7 @@ elif [[ "$1" == "--debug" ]] || [[ "$1" == "-d" ]]; then
     CONFIG="Debug"
 fi
 
-APP_DIR=$(dirname $0)
+APP_DIR=$(dirname "$0")
 ROOT_DIR=$(dirname $APP_DIR)
 BUILD_DIR="$APP_DIR/build"
 APP_NAME="BudgetBudget.app"
