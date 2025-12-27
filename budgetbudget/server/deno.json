@@ -1,6 +1,5 @@
 {
   "name": "@xph/budgetbudget-server",
-  "private": true,
   "version": "0.0.1",
   "description": "tRPC router and transport adapter for BudgetBudget",
   "license": "MIT",
