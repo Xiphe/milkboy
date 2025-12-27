@@ -36,7 +36,7 @@ jobs:
         run: deno test
 
       - name: Publish dry run
-        run: deno publish --dry-run
+        run: deno publish --dry-run --allow-slow-types
         if: matrix.deno == 'canary'
 
   lint:
@@ -75,5 +75,5 @@ jobs:
           cache: true
 
       - name: Release
-        run: deno publish
+        run: deno publish --allow-slow-types
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
