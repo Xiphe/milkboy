@@ -40,7 +40,7 @@ export function App({ trpc }: { trpc: Client }) {
 
   return (
     <div class="container">
-      <h1>BudgetBudget</h1>
+      <h1>BudgetBudget {process.env.NODE_ENV}</h1>
       <p class="subtitle">Production Spike - Hello World IPC</p>
 
       <div style="display: block;">

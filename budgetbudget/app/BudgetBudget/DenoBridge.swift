@@ -81,6 +81,13 @@ class DenoBridge {
         process.standardOutput = stdoutPipe
         process.standardError = stderrPipe
         
+        // Set NODE_ENV based on build configuration
+        #if DEBUG
+        process.environment = ["NODE_ENV": "development"]
+        #else
+        process.environment = ["NODE_ENV": "production"]
+        #endif
+
         // Handle stdout (responses from Deno)
         stdoutPipe.fileHandleForReading.readabilityHandler = { [weak self] handle in
             let data = handle.availableData

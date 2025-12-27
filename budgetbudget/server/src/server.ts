@@ -34,6 +34,10 @@ main().catch((err) => {
  * Main server loop - read from stdin, write to stdout
  */
 async function main() {
+  if (Deno.env.get("NODE_ENV") === "development") {
+    // deno-lint-ignore no-console
+    console.log("Server starting...");
+  }
   const decoder = new TextDecoder();
   const caller = appRouter.createCaller({});
 

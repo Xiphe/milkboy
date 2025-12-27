@@ -6,6 +6,11 @@
   "exports": {
     ".": "./src/main.tsx"
   },
+  "lint": {
+    "rules": {
+      "exclude": ["no-process-global"]
+    }
+  },
   "imports": {
     "preact": "npm:preact@^10.28.1",
     "preact/hooks": "npm:preact@^10.28.1/hooks",

@@ -9,10 +9,10 @@ if [[ "$1" == "--re-bundle-only" ]] || [[ "$1" == "-rb" ]]; then
 fi
 
 CONFIG="Debug"
-if [[ "$1" == "--release" ]] || [[ "$1" == "-r" ]]; then
+NODE_ENV="development"
+if [[ "$1" == "--release" ]] || [[ "$1" == "--production" ]]; then
     CONFIG="Release"
-elif [[ "$1" == "--debug" ]] || [[ "$1" == "-d" ]]; then
-    CONFIG="Debug"
+    NODE_ENV="production"
 fi
 
 APP_DIR=$(dirname "$0")
@@ -27,7 +27,7 @@ SERVER_CLIENT="${ROOT_DIR}/server/src/client.ts"
 SERVER_BIN="${ROOT_DIR}/server/build/rpc-server"
 
 
-echo "Building in ${CONFIG} mode..."
+echo "Building in ${NODE_ENV} mode..."
 
 if [ "$RE_BUNDLE_ONLY" = false ]; then
     # Clean build directory
@@ -53,7 +53,8 @@ mkdir -p ${RESOURCES_PATH}/ui
 # Embed assets into index.html
 deno eval "
 let document = await Deno.readTextFile('${WEBVIEW_DIR}/index.html');
-const bootstrapJS = await Deno.readTextFile('${WEBVIEW_DIR}/dist/bootstrap.js');
+let bootstrapJS = await Deno.readTextFile('${WEBVIEW_DIR}/dist/bootstrap.js');
+bootstrapJS = bootstrapJS.replace(/process\.env\.NODE_ENV/g, '\"${NODE_ENV}\"');
 const css = await Deno.readTextFile('${UI_DIR}/styles.css');
 document = document.split('<!--CLIENT-->').join('<script type=\"module\">' + bootstrapJS + '</script>');
 document = document.split('<!--STYLES-->').join('<style>' + css + '</style>');

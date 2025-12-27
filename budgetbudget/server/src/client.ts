@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-process-global
 /**
  * tRPC client for BudgetBudget
  */
@@ -50,8 +51,10 @@ export function createIpcResponseHandler(
       const pending = pendingRequests.get(id);
 
       if (!pending) {
-        // deno-lint-ignore no-console
-        console.warn("Received response for unknown request:", id);
+        if (process.env.NODE_ENV === "development") {
+          // deno-lint-ignore no-console
+          console.warn("Received response for unknown request:", id);
+        }
         return;
       }
 
