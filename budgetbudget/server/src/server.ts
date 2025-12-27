@@ -11,9 +11,9 @@ import { appRouter } from "./router.ts";
 import { z } from "zod";
 import superjson from "superjson";
 import {
-  operationSchema,
-  objectWithIdSchema,
   type IpcResponse,
+  objectWithIdSchema,
+  operationSchema,
 } from "./types.ts";
 import type { Operation } from "@trpc/client";
 

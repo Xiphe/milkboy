@@ -7,16 +7,16 @@ type Result<T extends (...args: any) => any> = Awaited<ReturnType<T>>;
 // deno-lint-ignore no-explicit-any
 type State<T extends (...args: any) => any> =
   | {
-      type: "success";
-      data: Result<T>;
-    }
+    type: "success";
+    data: Result<T>;
+  }
   | {
-      type: "error";
-      error: string;
-    }
+    type: "error";
+    error: string;
+  }
   | {
-      type: "init";
-    };
+    type: "init";
+  };
 
 export function App({ trpc }: { trpc: Client }) {
   const [result, setResult] = useState<State<Client["ping"]["ping"]["query"]>>({
